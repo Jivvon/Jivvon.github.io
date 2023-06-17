@@ -18,6 +18,7 @@
     },
     "scripts": {
         "start": "bundle exec jekyll serve",
+        "live": "bundle exec jekyll serve --livereload -o",
         "dev": "grunt watch & npm run start",
         "boil": "git push boilerplate boilerplate:master",
         "push": "git push origin master --tag"
