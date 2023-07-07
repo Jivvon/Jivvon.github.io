@@ -1,9 +1,9 @@
 {
-    "name": "hux-blog",
-    "title": "Hux Blog",
-    "author": "Hux <huxpro@gmail.com>",
-    "version": "1.8.2",
-    "homepage": "http://huxpro.github.io",
+    "name": "jiwon-blog",
+    "title": "Jiwon Blog",
+    "author": "Jiwon Jeong <jwjeong127@gmail.com>",
+    "version": "0.0.1",
+    "homepage": "https://jivvon.github.io",
     "repository": {
         "type": "git",
         "url": "https://github.com/Jivvon/jivvon.github.io"
