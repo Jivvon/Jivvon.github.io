@@ -1,11 +1,10 @@
-정지원입니다
+안녕하세요 3년차 DevOps 엔지니어, 정지원입니다. 서비스 아키텍처를 고민 및 설계하는 것을 좋아하며 개발 프로세스를 개선하기 위해 노력합니다.
 
-<!-- Hey, I am Huang, Xuan (a.k.a. _@huxpro_). I worked on the [React Team](https://beta.reactjs.org/community/meet-the-team#react-core) at <del>Facebook</del>Meta.
-
-I considered myself as a hybrid between a software engineer specifically into the programming languages theories and implementations domain (i.e. compiler, type system, type-based formal verification, virtual machine, runtime systems, garbage collection), and a creative technologiest deeply caring about many humanistic aspects (e.g. visual, sound, interaction) in UI and HCI in general.
-
-I also worked on the [Hermes JavaScript Engine](https://hermesengine.dev/), some other projects under the [Reality Labs (Research)](https://tech.fb.com/ar-vr/), and [ReasonML](https://reasonml.github.io/) (now [ReScript](https://rescript-lang.org/)) efforts at Meta (Facebook).
-
-In the past, I worked on [Alitrip (Fliggy)](https://www.alitrip.com/) mobile and web apps under the [Alibaba Group](https://en.wikipedia.org/wiki/Alibaba_Group), found and lead front-end infrastructure team at an unicorn startup company [Beijing Weiying (a.k.a. WePiao, now acquired by Maoyan)](https://www.crunchbase.com/organization/beijing-weiying-technology), and helped [Ele.me (now acquired by Alibaba)](https://en.wikipedia.org/wiki/Ele.me) to upgrade their mobile web site into [the first influential PWA (progressive web app) in China](https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509).
-
-I studied BA, Digital Media Art at [Communication University of China](https://en.wikipedia.org/wiki/Communication_University_of_China) and MS, Computer Science (with a focus on programming languages, mainly supervised by [Prof. Matthew Fluet](https://www.cs.rit.edu/~mtf/)) at [Rochester Institute of Technology](https://en.wikipedia.org/wiki/Rochester_Institute_of_Technology). -->
+- 전반적인 AWS 인프라를 관리합니다.
+  - AWS SSM을 이용하여 ECS와 EKS에서 공유하여 사용할 수 있도록 합니다.
+  - AWS Tag를 이용하여 리소스를 관리하며 불필요한 지출을 예방합니다.
+- Terraform을 활용하여 인프라를 관리합니다. 멀티 스테이지 및 버저닝을 고려하여 모듈을 작성합니다.
+- ECS에서 EKS로 인프라를 마이그레이션합니다.
+  - 공용 Helm Chart를 작성하고, 이를 이용하여 어플리케이션 Helm Chart를 작성합니다.
+  - 내부 배포시스템 및 ELB를 활용하여 카나리 배포를 지원합니다.
+- CircleCI, Github Actions, ArgoCD를 활용하여 CI/CD 파이프라인을 구축 및 개선합니다.
