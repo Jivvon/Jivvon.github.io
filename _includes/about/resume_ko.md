@@ -13,9 +13,14 @@
 
 ### Experience
 
-#### [2022.05 ~ 재직 중] 채널코퍼레이션 - DevOps Engineer
+<br/>
 
-##### **채널톡 [전화 연동](https://channel.io/ko/meet/call) 인프라 구성 [2023.02 ~ ]**
+#### 채널코퍼레이션 - DevOps Engineer [2022.05 ~ 재직 중]
+
+<br/>
+
+
+**채널톡 [전화 연동](https://channel.io/ko/meet/call) 인프라 구성 [2023.02 ~ ]**
 
 SFU 방식의 WebRTC, 통신사별 특정 IP에 대해서만 통신, AutoScale 전략 등 많은 고민을 했던 프로젝트입니다.
 
@@ -23,9 +28,11 @@ SFU 방식의 WebRTC, 통신사별 특정 IP에 대해서만 통신, AutoScale �
 - Peer와 직접 통신하는 서버는 Public subnet에, 레코딩을 수행하는 서버는 Private subnet에 배포
 - Peer와 직접 통신하는 서버의 경우 hostNetwork를 사용하여 노드의 특정 UDP 대역을 사용하도록 설정
 
-**Tech Skills.** `EKS` `LiveKit(WebRTC)`
+_Tech Skills. `EKS` `LiveKit(WebRTC)`_
 
-##### Terraform 리팩토링 및 모듈화 [2022.10 ~]
+<br/>
+
+**Terraform 리팩토링 및 모듈화 [2022.10 ~]**
 
 - 기본적으로 Terraform AWS 모듈을 사용하고, 상황에 따라 수정하거나 새로 개발하여 사용
 - 동일한 형태가 반복되는 경우에는 yaml에서 가져오도록 수정
@@ -36,9 +43,11 @@ SFU 방식의 WebRTC, 통신사별 특정 IP에 대해서만 통신, AutoScale �
     - 단일 Git 저장소에 모아놓고 모듈의 source에 Github scheme을 사용 → plan, apply시 Git 저장소 전체를 가져오기 때문에 오래 걸림
     - S3에 모듈을 버전별로 올려놓고 terraform 명령시 해당 모듈을 받아오는 툴을 개발하여 사용 → 개발 필요
 
-**Tech Skills.** `Terraform`
+_Tech Skills. `Terraform`_
 
-##### EKS 환경 셋업 & ECS → EKS 마이그레이션 [2022.07 ~ 2022.09]
+<br/>
+
+**EKS 환경 셋업 & ECS → EKS 마이그레이션 [2022.07 ~ 2022.09]**
 
 - 어플리케이션 Helm Chart 작성
 - Cluster Autoscaler를 활용하여 Node 오토스케일링, HPA를 사용하여 Pod 오토스케일링 적용
@@ -47,20 +56,24 @@ SFU 방식의 WebRTC, 통신사별 특정 IP에 대해서만 통신, AutoScale �
 - ArgoCD를 이용하여 GitOps 방식의 CD 구현
 - 개발용 서버 인프라를 ECS에서 EKS로 마이그레이션
 
-**Tech Skills.** `EKS` `Helm` `Terraform` `ArgoCD` `AWS Route53` `AWS CloudMap`
+_Tech Skills. `EKS` `Helm` `Terraform` `ArgoCD` `AWS Route53` `AWS CloudMap`_
 
-##### CI/CD 파이프라인 빌드 개선 [2022.06 ~ 2022.07]
+<br/>
+
+**CI/CD 파이프라인 빌드 개선 [2022.06 ~ 2022.07]**
 
 - 주요 어플리케이션의 CI 파이프라인에서 Docker buildx를 활용하여 멀티 아키텍처 빌드를 하도록 개선
 - 캐싱, Graceful Shutdown, 런타임 이미지 경량화를 고려하여 Dockerfile 개선 및 CI 개선
 
-**Tech Skills.** `Docker` `CircleCI`
+_Tech Skills. `Docker` `CircleCI`_
 
 ---
 
-#### [2021.03 ~ 2022.02] SI Analytics - DevOps Engineer
+#### SI Analytics - DevOps Engineer [2021.03 ~ 2022.02]
 
-##### 쿠버네티스 클러스터 운영
+<br/>
+
+**쿠버네티스 클러스터 운영**
 
 온프레미스 환경에서 총 21대의 물리 서버와 44대의 VM으로 구성된 5개의 Kubernetes 클러스터를 관리하였습니다.
 
@@ -72,9 +85,11 @@ SFU 방식의 WebRTC, 통신사별 특정 IP에 대해서만 통신, AutoScale �
         - Rolebinding / ClusterRolebinding : 공통 values에서 그룹별 사용자를 정의하고 각 ClusterRole에서 그룹을 할당하는 방식으로 사용
         - ClusterRole : 기본 권한을 기반으로 필요에 따라 aggregate를 활용하여 권한 추가 가능
 
-**Tech Skills.** `Kubernetes`  `Helm`  `ArgoCD`  `Prometheus`  `Loki`  `Grafana` `OPA`
+_Tech Skills. `Kubernetes`  `Helm`  `ArgoCD`  `Prometheus`  `Loki`  `Grafana` `OPA`_
 
-##### 모니터링 시스템 구축 및 운영 [2021.03 ~ 2022.02]
+<br/>
+
+**모니터링 시스템 구축 및 운영 [2021.03 ~ 2022.02]**
 
 - 메트릭, 로그, 알림 흐름
     - 메트릭은 각 Exporter → Prometheus → Grafana 흐름으로 메트릭을 수집 및 저장하여 시각화
@@ -85,19 +100,23 @@ SFU 방식의 WebRTC, 통신사별 특정 IP에 대해서만 통신, AutoScale �
     - Prometheus 서버와 AlertManager를 이중화하여 서비스의 가용성을 높임
 - DCGM Exporter에서 수집하는 메트릭의 레이블에 GPU 모델명을 추가하여 사내에 제공하고 공식 레포에 PR 생성 [[링크](https://gitlab.com/nvidia/container-toolkit/gpu-monitoring-tools/-/merge_requests/71)]
 
-**Tech Skills.** `Kubernetes`  `Helm`  `Prometheus`  `Loki`  `Grafana` `Go`
+_Tech Skills. `Kubernetes`  `Helm`  `Prometheus`  `Loki`  `Grafana` `Go`_
 
-##### 쿠버네티스 환경 백업 및 복원 시스템 구축 [2021.09 ~ 2022.10]
+<br/>
+
+**쿠버네티스 환경 백업 및 복원 시스템 구축 [2021.09 ~ 2022.10]**
 
 쿠버네티스 클러스터의 모든 리소스와 주요 서비스를 백업 및 복원하는 시스템을 구축하였습니다.
 
-- Harbor | Database 덤프를 생성하는 스크립트 작성 후 cronjob으로 실행
-- ETCD | Etcdctl을 이용하여 스냅샷 생성하는 스크립트 작성 후 cronjob으로 실행
-- K8S Resources | velero를 이용하여 주기적으로 네임스페이스별 모든 리소스를 Minio에 백업
+- Harbor: Database 덤프를 생성하는 스크립트 작성 후 cronjob으로 실행
+- ETCD: Etcdctl을 이용하여 스냅샷 생성하는 스크립트 작성 후 cronjob으로 실행
+- K8S Resources: velero를 이용하여 주기적으로 네임스페이스별 모든 리소스를 Minio에 백업
 
-**Tech Skills.** `Kubernetes`  `Helm`  `Shell`  `ArgoCD`  `Harbor`  `Velero`  `Minio`
+_Tech Skills. `Kubernetes`  `Helm`  `Shell`  `ArgoCD`  `Harbor`  `Velero`  `Minio`_
 
-##### 쿠버네티스 클러스터 재구축 및 마이그레이션 [2021.11 ~ 2022.02]
+<br/>
+
+**쿠버네티스 클러스터 재구축 및 마이그레이션 [2021.11 ~ 2022.02]**
 
 - Control Plane 노드 3대와 HAProxy를 이용하여 고가용성 구성
 - 개발용 클러스터 구축
@@ -105,6 +124,6 @@ SFU 방식의 WebRTC, 통신사별 특정 IP에 대해서만 통신, AutoScale �
 - 사내 운영 서비스(Harbor, Minio, Grafana, Prometheus, Loki) 배포
 - HCI VM과 Subnet을 관리할 수 있는 Terraform 모듈 작성
 
-**Github.** [https://github.com/Jivvon/nutanix-terraform-modules](https://github.com/Jivvon/nutanix-terraform-modules)
+_Github. [https://github.com/Jivvon/nutanix-terraform-modules](https://github.com/Jivvon/nutanix-terraform-modules)_
 
-**Tech Skills.** `Kubernetes` `Helm` `Shell` `Terraform`
+_Tech Skills. `Kubernetes` `Helm` `Shell` `Terraform`_
