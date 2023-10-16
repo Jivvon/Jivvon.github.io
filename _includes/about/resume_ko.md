@@ -19,20 +19,48 @@
 
 <br/>
 
+**보안**
 
-**채널톡 [전화 연동](https://channel.io/ko/meet/call) 인프라 구성 [2023.02 ~ ]**
-
-SFU 방식의 WebRTC, 통신사별 특정 IP에 대해서만 통신, AutoScale 전략 등 많은 고민을 했던 프로젝트입니다.
-
-- EKS에 SFU 서버로 LiveKit 사용
-- Peer와 직접 통신하는 서버는 Public subnet에, 레코딩을 수행하는 서버는 Private subnet에 배포
-- Peer와 직접 통신하는 서버의 경우 hostNetwork를 사용하여 노드의 특정 UDP 대역을 사용하도록 설정
-
-_Tech Skills. `EKS` `LiveKit(WebRTC)`_
+- 사용자 관리
+    - AWS Config를 활용하여 Access Key와 Secret Key에 대한 key rotate rule 설정
+    - 서비스별 특징에 따라 접근 가능한 범위를 세분화하여 IP 제한 및 MFA 설정을 강제하는 Policy 적용
+    - Okta를 SSOT(Single Source of Truth)로 하여 Grafana, ArgoCD, Argo Workflows 등 OIDC 적용
+- 내부 관리 페이지에서 특정 IP에 대한 접근을 차단하기 위해 AWS WAF를 래핑한 API 서버 개발
 
 <br/>
 
-**Terraform 리팩토링 및 모듈화 [2022.10 ~]**
+**비용 효율화**
+
+- AWS 리소스 정리
+    - Terraform aws provider에 default 태그를 추가하여 리소스 추적
+    - Terraform으로 관리되지 않는 리소스의 경우 AWS Config를 활용하여 자동으로 정리되도록 설정
+- Karpenter Spot 인스턴스
+
+<br/>
+
+**EKS 모니터링 시스템 구축 [2023.06 ~ 2023.07]**
+
+- 각 Exporter와 Prometheus, Grafana를 활용하여 메트릭 수집 및 시각화
+- Thanos를 활용하여 가용성 확보 및 메트릭 장기 저장
+- Promtail, Loki, Grafana를 활용하여 로그 수집 및 시각화
+- 특정 로그 발생시 채널톡으로 알람을 보내주는 Webhook 서버 및 AWS Lambda 개발
+
+_Tech Skills. `Kubernetes`  `Helm`  `Prometheus`  `Loki`  `Grafana` `Go`_
+
+<br/>
+
+**채널톡 [전화 연동](https://channel.io/ko/meet/call) 인프라 구성 [2023.02 ~ ]**
+
+- Peer와 직접 통신하는 서버의 경우 hostNetwork를 사용하여 노드의 특정 UDP 대역을 사용하도록 설정
+- 통신사별 독립된 시그널링 서버 구성
+- Media 서버의 요청 타입 및 내부 알고리즘을 고려하여 로드 밸런싱 & 오토 스케일링 되도록 최적화
+- 전화 연동 관련 인프라 CI/CD 파이프라인 구성, Helm Chart 작성 및 배포
+
+_Tech Skills. `EKS` `WebRTC`_
+
+<br/>
+
+**Terraform 리팩토링 및 모듈화 [2022.10 ~ 2023.02]**
 
 - 기본적으로 Terraform AWS 모듈을 사용하고, 상황에 따라 수정하거나 새로 개발하여 사용
 - 동일한 형태가 반복되는 경우에는 yaml에서 가져오도록 수정
@@ -47,10 +75,10 @@ _Tech Skills. `Terraform`_
 
 <br/>
 
-**EKS 환경 셋업 & ECS → EKS 마이그레이션 [2022.07 ~ 2022.09]**
+**EKS 환경 셋업 & ECS → EKS 마이그레이션 환경 구성 [2022.07 ~ 2022.09]**
 
 - 어플리케이션 Helm Chart 작성
-- Cluster Autoscaler를 활용하여 Node 오토스케일링, HPA를 사용하여 Pod 오토스케일링 적용
+- Cluster Autoscaler를 활용하여 Node 오토스케일링, HPA를 활용하여 Pod 오토스케일링 적용
 - External DNS를 활용하여 Route53과 CloudMap 설정
 - AWS Load Balancer Controller의 TargetGroupBinding을 사용하는 차트 작성 및 ELB와 TG는 Terraform으로 생성
 - ArgoCD를 이용하여 GitOps 방식의 CD 구현
